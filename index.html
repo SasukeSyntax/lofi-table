@@ -3,9 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lofi Table</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;1,600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Dongle&family=Krub:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 </head>
-<body>
-    
+
+<body class="midnight-theme">
+
+    <header class="top-bar">
+
+        <div class="logo" id="logo">
+            📕Lofi Table
+        </div>
+
+        <div class="theme-switcher-div">
+            <button class="theme-btn">Midnight</button>
+            <button class="theme-btn">Cyberpunk</button>
+            <button class="theme-btn">Autumn</button>
+        </div>
+    </header>
+
+    <main class="grid-container">
+
+        <div class="big-card" id="volume-panel">
+            <h2>Sounds</h2>
+
+            <div class="volume-row">
+                <span class="sound">Raining</span>
+                <input type="range" id="vol-rain" min="0" max="1" step="0.1" value="0">
+                <button class="play-pause" onclick="">Play</button>
+            </div>
+
+            <div class="volume-row">
+                <span class="sound">Crackeling Fire</span>
+                <input type="range" id="vol-rain" min="0" max="1" step="0.1" value="0">
+                <button class="play-pause" onclick="">Play</button>
+            </div>
+
+            <div class="volume-row">
+                <span class="sound">Keyboard</span>
+                <input type="range" id="vol-rain" min="0" max="1" step="0.1" value="0">
+                <button class="play-pause" onclick="">Play</button>
+            </div>
+
+            <div class="volume-row">
+                <span class="sound">Lofi Beats</span>
+                <input type="range" id="vol-rain" min="0" max="1" step="0.1" value="0">
+                <button class="play-pause" onclick="">Play</button>
+            </div>
+        </div>
+
+        <div class="big-card" id="timer-panel">
+            <div class="card">
+                <h2 class="timer-headLine">Focus Timer</h2>
+                <div id="countdown">25:00</div>
+                <div class="controls">
+                    <button id="timer-start" onclick="">Stop</button>
+                    <button id="timer-pause" onclick="">Pause</button>
+                    <button id="timer-reset" onclick="">Reset</button>
+                </div>
+            </div>
+
+            <div class="card todo-card" id="note-taker">
+             <h2>Tasklist</h2>
+
+              <div class="todo-input-row">
+                <input type="text" placeholder="Task description...">
+                <button onclick="">ADD</button>
+              </div>
+
+             <ul class="todo-list">
+                <!-- takz will load heya -->
+             </ul>
+            </div>
+        </div>
+
+        <div class="big-card notes-card">
+            <h2>Notes</h2>
+            <textarea id="sticky" placeholder="Jot down notes, links, or doodles here..."></textarea>
+        </div>
+    </main>
+
+
+    <script src="script.js"></script>
 </body>
 </html>
