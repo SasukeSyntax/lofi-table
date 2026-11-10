@@ -43,4 +43,182 @@ body.autumn-theme {
     margin: 0 auto 30px;
     max-width: 1200px;
     padding: 15px;
+
+    background-color: var(--bg-card);
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+}
+
+.logo {
+    font-size: 24px;
+    color: var(--accent);
+    text-shadow: 0 0 8px var(--accent);
+}
+
+
+.theme-btn {
+    background: transparent;
+    color: #fff;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 8pc 12px;
+    margin-left: 8px;
+    border-radius: 5px;
+
+    font-family: 'Share Tech Mono', monospace;
+    cursor: pointer;
+}
+
+.theme-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    gap: 30px;
+
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.big-card {
+    background-color: var(--bg-card);
+
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+
+    padding: 25px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+h2 {
+    font-size: 24px;
+    color: var(--accent);
+
+    margin-bottom: 20px;
+    border-bottom: 1px dashed var(--accent);
+    padding-bottom: 8px;
+}
+
+.volume-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.volume-row span {
+    width: 120px;
+}
+
+input[type="range"] {
+    flex-grow: 1;
+    margin: 0 15px;
+    cursor: pointer;
+    accent-color: var(--accent);
+}
+
+.play-pause {
+    background-color: #1a1a1a;
+    border: 1px solid var(--accent);
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-family: 'Share Tech Mono', monospace;
+    cursor: pointer;
+}
+
+.play-pause:hover {
+    background-color: var(--accent);
+    color: #000;
+}
+
+.main-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.timer-card {
+    text-align: center;
+}
+
+#countdown {
+    font-size: 64px;
+    margin: 15px 0;
+    text-shadow: 0 0 10px var(--accent);
+}
+
+.controls button {
+    background: transparent;
+    color: #fff;
+
+    border: 2px solid var(--accent);
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 5px;
+
+    font-size: 16px;
+    font-family: 'Share Tech Mono', monospace;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.controls button:hover {
+    background-color: var(--accent);
+    color: #000;
+}
+
+.todo-input-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.todo-input-row input {
+    flex-grow: 1;
+    background-color: rgba(0,0,0,0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    padding: 8px;
+    color: #fff;
+    border-radius: 4px;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.todo-input-row button {
+    background-color: #1a1a1a;
+
+    border: 1px solid var(--accent);
+    color: #fff;
+
+    padding: 8px 16px;
+    border-radius: 4px;
+
+    cursor: pointer;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.todo-input-row button:hover {
+    background-color: var(--accent);
+    color: #000;
+}
+
+#todo-list {
+    list-style: none;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+#todo-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
 }

@@ -10,6 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;1,600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Dongle&family=Krub:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="index.css">
 </head>
 
 <body class="midnight-theme">
@@ -57,8 +59,9 @@
             </div>
         </div>
 
-        <div class="big-card" id="timer-panel">
-            <div class="card">
+        <div class="big-card main-panel" id="timer-panel">
+
+            <div class="card timer-card">
                 <h2 class="timer-headLine">Focus Timer</h2>
                 <div id="countdown">25:00</div>
                 <div class="controls">
@@ -76,10 +79,11 @@
                 <button onclick="">ADD</button>
               </div>
 
-             <ul class="todo-list">
+             <ul id="todo-list">
                 <!-- takz will load heya -->
              </ul>
             </div>
+
         </div>
 
         <div class="big-card notes-card">
@@ -87,6 +91,11 @@
             <textarea id="sticky" placeholder="Jot down notes, links, or doodles here..."></textarea>
         </div>
     </main>
+
+    <audio id="audio-rain" src="ASSets/rain.mp3" loop></audio>
+    <audio id="audio-fire" src="ASSets/fire.mp3" loop></audio>
+    <audio id="audio-keyboard" src="ASSets/keyboard.mp3" loop></audio>
+    <audio id="audio-lofi" src="ASSets/lofi-beats.mp3" loop></audio>
 
 
     <script src="script.js"></script>
