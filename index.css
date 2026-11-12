@@ -8,6 +8,7 @@ body {
   font-family: 'Share Tech Mono', monospace;
   color: #fff;
   min-height: 100vh;
+  padding: 20px;
   
   background-size: cover;
   background-position: center;
@@ -61,7 +62,7 @@ body.autumn-theme {
     color: #fff;
 
     border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 8pc 12px;
+    padding: 8px 12px;
     margin-left: 8px;
     border-radius: 5px;
 
@@ -221,4 +222,39 @@ input[type="range"] {
     
     padding: 8px 0;
     border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.task-text.done {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.task-btn {
+    background: transparent;
+    border: none;
+    color: var(--accent);
+    margin-left: 8px;
+    cursor: pointer;
+}
+
+.notes-card textarea {
+    width: 100%;
+    height: 280px;
+
+    background-color: transparent;
+    color: #efead4;
+
+    border: none;
+    font-family: 'Crimson Text', serif;
+    font-size: 18px;
+
+    resize: none;
+    outline: none;
+    line-height: 1.5;
+}
+
+@media (max-width: 950px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
 }

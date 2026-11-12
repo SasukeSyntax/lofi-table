@@ -37,25 +37,25 @@
             <div class="volume-row">
                 <span class="sound">Raining</span>
                 <input type="range" id="vol-rain" min="0" max="1" step="0.1" value="0">
-                <button class="play-pause" onclick="">Play</button>
+                <button class="play-pause" onclick="playSound('rain')">Play</button>
             </div>
 
             <div class="volume-row">
                 <span class="sound">Crackeling Fire</span>
-                <input type="range" id="vol-rain" min="0" max="1" step="0.1" value="0">
-                <button class="play-pause" onclick="">Play</button>
+                <input type="range" id="vol-fire" min="0" max="1" step="0.1" value="0">
+                <button class="play-pause" onclick="playSound('fire')">Play</button>
             </div>
 
             <div class="volume-row">
                 <span class="sound">Keyboard</span>
-                <input type="range" id="vol-rain" min="0" max="1" step="0.1" value="0">
-                <button class="play-pause" onclick="">Play</button>
+                <input type="range" id="vol-keyboard" min="0" max="1" step="0.1" value="0">
+                <button class="play-pause" onclick="playSound('keyboard')">Play</button>
             </div>
 
             <div class="volume-row">
                 <span class="sound">Lofi Beats</span>
-                <input type="range" id="vol-rain" min="0" max="1" step="0.1" value="0">
-                <button class="play-pause" onclick="">Play</button>
+                <input type="range" id="vol-lofi" min="0" max="1" step="0.1" value="0">
+                <button class="play-pause" onclick="playSound('lofi')">Play</button>
             </div>
         </div>
 
@@ -65,9 +65,9 @@
                 <h2 class="timer-headLine">Focus Timer</h2>
                 <div id="countdown">25:00</div>
                 <div class="controls">
-                    <button id="timer-start" onclick="">Stop</button>
-                    <button id="timer-pause" onclick="">Pause</button>
-                    <button id="timer-reset" onclick="">Reset</button>
+                    <button id="timer-start" onclick="startTimer()">Stop</button>
+                    <button id="timer-pause" onclick="pauseTimer()">Pause</button>
+                    <button id="timer-reset" onclick="resetTimer()">Reset</button>
                 </div>
             </div>
 
@@ -75,8 +75,8 @@
              <h2>Tasklist</h2>
 
               <div class="todo-input-row">
-                <input type="text" placeholder="Task description...">
-                <button onclick="">ADD</button>
+                <input id="task-input" type="text" placeholder="Task description...">
+                <button onclick="addTask()">ADD</button>
               </div>
 
              <ul id="todo-list">
@@ -88,7 +88,7 @@
 
         <div class="big-card notes-card">
             <h2>Notes</h2>
-            <textarea id="sticky" placeholder="Jot down notes, links, or doodles here..."></textarea>
+            <textarea id="sticky" oninput="saveNotes()" placeholder="Jot down notes, links, or doodles here..."></textarea>
         </div>
     </main>
 
