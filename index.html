@@ -23,9 +23,9 @@
         </div>
 
         <div class="theme-switcher-div">
-            <button class="theme-btn">Midnight</button>
-            <button class="theme-btn">Cyberpunk</button>
-            <button class="theme-btn">Autumn</button>
+            <button class="theme-btn" onclick="changeTheme('midnight-theme')">Midnight</button>
+            <button class="theme-btn" onclick="changeTheme('cyberpunk-theme')">Cyberpunk</button>
+            <button class="theme-btn" onclick="changeTheme('autumn-theme')">Autumn</button>
         </div>
     </header>
 
@@ -36,26 +36,37 @@
 
             <div class="volume-row">
                 <span class="sound">Raining</span>
-                <input type="range" id="vol-rain" min="0" max="1" step="0.1" value="0">
-                <button class="play-pause" onclick="playSound('rain')">Play</button>
+                <input type="range" id="vol-rain" min="0" max="1" step="0.1" value="0" oninput="changeVol('rain')">
+                <button class="play-pause" id="btn-rain" onclick="playSound('rain')">Play</button>
             </div>
 
             <div class="volume-row">
                 <span class="sound">Crackeling Fire</span>
-                <input type="range" id="vol-fire" min="0" max="1" step="0.1" value="0">
-                <button class="play-pause" onclick="playSound('fire')">Play</button>
+                <input type="range" id="vol-fire" min="0" max="1" step="0.1" value="0" oninput="changeVol('fire')">
+                <button class="play-pause" id="btn-fire" onclick="playSound('fire')">Play</button>
             </div>
 
             <div class="volume-row">
                 <span class="sound">Keyboard</span>
-                <input type="range" id="vol-keyboard" min="0" max="1" step="0.1" value="0">
-                <button class="play-pause" onclick="playSound('keyboard')">Play</button>
+                <input type="range" id="vol-keyboard" min="0" max="1" step="0.1" value="0" oninput="changeVol('keyboard')">
+                <button class="play-pause" id="btn-keyboard" onclick="playSound('keyboard')">Play</button>
             </div>
 
             <div class="volume-row">
                 <span class="sound">Lofi Beats</span>
-                <input type="range" id="vol-lofi" min="0" max="1" step="0.1" value="0">
-                <button class="play-pause" onclick="playSound('lofi')">Play</button>
+                <input type="range" id="vol-lofi" min="0" max="1" step="0.1" value="0" oninput="changeVol('lofi')">
+                <button class="play-pause" id="btn-lofi" onclick="playSound('lofi')">Play</button>
+            </div>
+
+            <h2>Vibe Presets</h2>
+            <div class="preset-box">
+               <button class="play-pause" onclick="setPreset(0.8, 0.4, 0, 0.1)">Stormy Cabin</button>
+
+               <button class="play-pause" onclick="setPreset(0.3, 0, 0.7, 0.5)">Night Coding</button>
+
+               <button class="play-pause" onclick="setPreset(0.2, 0.9, 0.1, 0)">Dev's Favourite</button>
+
+               <button class="play-pause" onclick="setPreset(0, 0, 0, 0)">Mute All</button>
             </div>
         </div>
 
@@ -65,10 +76,17 @@
                 <h2 class="timer-headLine">Focus Timer</h2>
                 <div id="countdown">25:00</div>
                 <div class="controls">
-                    <button id="timer-start" onclick="startTimer()">Stop</button>
+                    <button id="timer-start" onclick="startTimer()">Start</button>
                     <button id="timer-pause" onclick="pauseTimer()">Pause</button>
                     <button id="timer-reset" onclick="resetTimer()">Reset</button>
                 </div>
+
+                <div class="mode-buttons">
+                    <button onclick="setMode(25)">25m Focus</button>
+                    <button onclick="setMode(50)">50m Deep</button>
+                    <button onclick="setMode(5)">5m Break</button>
+                </div>
+                <p class="streak-text">Sessions Completed: <span id="session-count">0</span>🔥</p>
             </div>
 
             <div class="card todo-card" id="note-taker">
@@ -98,6 +116,6 @@
     <audio id="audio-lofi" src="ASSets/lofi-beats.mp3" loop></audio>
 
 
-    <script src="script.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>

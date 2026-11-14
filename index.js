@@ -48,11 +48,11 @@ function showTime() {
     let secs = timeLeft % 60;
 
     if ( mins < 10) {
-        mins = 0 + mins;
+        mins = "0" + mins;
     }
 
     if ( secs < 10) {
-        secs = 0 + secs;
+        secs = "0" + secs;
     }
 
     document.getElementById("countdown").innerText = mins + ":" + secs;
@@ -88,6 +88,7 @@ function resetTimer() {
 
 function addTask() {
     let input = document.getElementById("task-input");
+    
     let list = document.getElementById("todo-list");
 
     if (input.value == "") {
@@ -95,10 +96,78 @@ function addTask() {
     }
 
     let li = document.createElement("li");
-    li.innerHTML = `<span class="task-text" onclick="this.classList.toggle('done')" style="cursor: pointer;">${input.value}</span>
-        <button class="task-btn" onclick="this.parentElement.remove(); saveTasks();">X</button>`;
+    li.innerHTML = `
+        <span class="task-text" onclick="this.classList.toggle('done'); saveTasks();" style="cursor: pointer;">${input.value}</span>
+        <button class="task-btn" onclick="this.parentElement.remove(); saveTasks();">X</button>
+    `;
 
-        list.appendChild(li);
-        input.value = "";
-        saveTasks();
+    list.appendChild(li);
+    input.value = "";
+    saveTasks();
+}
+
+function saveTasks() {
+    let listHtml = document.getElementById("todo-list").innerHTML;
+
+    localStorage.setItem("savedTasks", listHtml)
+}
+
+function saveNotes() {
+    let notesText = document.getElementById("sticky").value;
+    localStorage.setItem("savedNotes", notesText);
+}
+
+// saving all the stuff in local storage
+
+window.onload = function() {
+    let savedTheme = localStorage.getItem("savedTheme");
+    if ( savedTheme != null) {
+        document.body.className = savedTheme;
     }
+
+    let savedNotes = localStorage.getItem("savedNotes");
+    if (savedNotes != null) {
+        document.getElementById("sticky").value = savedNotes;
+    }
+
+    let savedTasks = localStorage.getItem("savedTasks");
+    if (savedTasks != null) {
+        document.getElementById("todo-list").innerHTML = savedTasks;
+    }
+}
+
+
+// sessions streak thingy
+
+let sessions = 0;
+
+function setMode(minutes) {
+    pauseTimer();
+    timeLeft = minutes * 60;
+
+    showTime();
+}
+
+function addSession() {
+    sessions = sessions + 1;
+    document.getElementById("sessions-count").innerText = sessions;
+
+    localStorage.setItem("savedSessions", sessions);
+}
+
+
+
+// volume presets
+function setPreset(rainVol, fireVol, keyVol, lofiVol) {
+    document.getElementById("vol-rain").value = rainVol;
+    changeVol("rain");
+
+    document.getElementById("vol-fire").value = fireVol;
+    changeVol("fire");
+
+    document.getElementById("vol-keyboard").value = keyVol;
+    changeVol("keyboard");
+
+    document.getElementById("vol-lofi").value = lofiVol;
+    changeVol("lofi");
+}
