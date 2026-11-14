@@ -171,3 +171,40 @@ function setPreset(rainVol, fireVol, keyVol, lofiVol) {
     document.getElementById("vol-lofi").value = lofiVol;
     changeVol("lofi");
 }
+
+
+// clock and quote scripts
+
+function updateClock() {
+    let now = new Date();
+    document.getElementById("live-clock").innerText = now.toLocaleTimeString();
+}
+setInterval(updateClock, 1000);
+
+
+
+let quotes = [
+    "Focus now so you can game guilt-free later.",
+    "One bug fixed is one step closer to done.",
+    "Drink some water and fix your posture.",
+    "Small progress is still progress.",
+    "Dont stop until its done.",
+    "Success is not achieved by winning all the time. Real success comes when we rise after we fall.",
+    "Start where you are. Use what you have. Do what you can.",
+    "Whatever the mind of man can conceive and believe, it can achieve.",
+    "Strive not to be a success, but rather to be of value.",
+    "You miss 100% of the  shots you dont take.",
+    "The most difficult thing is the decision to act, the rest is just tenacity.",
+    "Every strike will bring me to the next home run.",
+    "The mind is everything. What you think you become.",
+    "Eighty percent of success if showing up.",
+    "Winning isnt everything, but wanting to win is.",
+    "I am not a product of my circumstances. I am a product of my decisions.",
+    "You can never cross the ocean until you have the courage to lose sight of the shore."
+];
+
+function newQuote() {
+    let randomNum = Math.floor(Math.random() * quotes.length);
+
+    document.getElementById("quote-text").innerText = "` " + quotes[randomNum] + " `";
+}

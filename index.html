@@ -22,6 +22,8 @@
             📕Lofi Table
         </div>
 
+        <div id="live-clock">00:00:00</div>
+
         <div class="theme-switcher-div">
             <button class="theme-btn" onclick="changeTheme('midnight-theme')">Midnight</button>
             <button class="theme-btn" onclick="changeTheme('cyberpunk-theme')">Cyberpunk</button>
@@ -67,6 +69,12 @@
                <button class="play-pause" onclick="setPreset(0.2, 0.9, 0.1, 0)">Dev's Favourite</button>
 
                <button class="play-pause" onclick="setPreset(0, 0, 0, 0)">Mute All</button>
+            </div>
+
+
+            <div class="quote-box">
+                <p id="quote-text">` Just 5 more minutes of focus. `</p>
+                <button class="play-pause" onclick="newQuote()">New Quote</button>
             </div>
         </div>
 
